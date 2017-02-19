@@ -46,8 +46,10 @@ document.addEventListener('DOMContentLoaded', function() {
     let innerBar = document.createElement('div')
     power.className = 'power'
     bar.className = 'bar'
-    bar.dataset.percent = round(leader.stress, 1)
     innerBar.className = 'inner-bar'
+    innerBar.dataset.label = round(leader.stress, 1)
+    innerBar.style.width = getPowerBarPercent(leader.stress) + "%"
+
     bar.appendChild(innerBar)
     power.appendChild(bar)
     listItem.appendChild(power)
@@ -60,5 +62,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
 function round(value, precision) {
     var multiplier = Math.pow(10, precision || 0);
-    return Math.round(value * multiplier) / multiplier;
+    return Math.round(value * multiplier) / multiplier
+}
+
+
+function getPowerBarPercent(power) {
+  return round((power / DATA.top[0].stress * 100), 0)
 }
