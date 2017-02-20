@@ -1,97 +1,39 @@
 document.addEventListener('DOMContentLoaded', function() {
-  let list = document.createElement('ul');
-  createHeader(list)
-
+  let leaderBoard = document.getElementById('leaderboard');
   DATA.top.forEach((leader) => {
-    let listItem = createListItem()
-    createLeaderElement(listItem, leader.rank + 1, 'rank')
-    createLeaderElement(listItem, leader.name, 'username')
-    createLeaderImage(listItem, leader)
-    createLeaderBar(listItem, leader)
-    list.appendChild(listItem)
+    let leaderBoardRow = createLeaderBoardRow()
+    createLeaderBoardTextElement(leaderBoardRow, 'rank leader-board-cell col-1 col-m-1', (leader.rank + 1))
+    createLeaderBoardAvatar(leaderBoard, leader)
+    createLeaderBoardTextElement(leaderBoardRow, 'leader-board-cell col-4 col-m-4', leader.name )
+    createLeaderBoardPowerBar(leaderBoardRow, leader, 'col-6')
+    leaderBoard.appendChild(leaderBoardRow)
   })
-  document.getElementById('container').appendChild(list)
   setGraphWidths()
+  document.getElementById('view-stats').addEventListener("click", () => {
+    window.location="./user.html"
+  })
 });
 
-function round(value, precision) {
-    var multiplier = Math.pow(10, precision || 0);
-    return Math.round(value * multiplier) / multiplier
+function createLeaderBoardRow(){
+  leaderBoardRow = document.createElement('div');
+  leaderBoardRow.className = 'leader highlightable row';
+  return leaderBoardRow;
 }
 
-function getPowerBarPercent(power) {
-  return round((power / (DATA.top[0].stress + 50) * 100), 0)
+function createLeaderBoardTextElement(leaderBoardRow, className, text) {
+  let element = document.createElement('div')
+  element.className = className
+  element.appendChild(document.createTextNode(text))
+  leaderBoardRow.appendChild(element)
 }
 
-function setGraphWidths() {
-  console.log('setting widths.')
-  let _bars = [].slice.call(document.querySelectorAll('.inner-bar'));
-  _bars.map((bar, index) => {
-    setTimeout(() => {
-      console.log(bar.dataset.label)
-      bar.style.width = getPowerBarPercent(bar.dataset.label) + "%";
-    }, 0);
-  })
-  setTimeout(() => {
-    applyLabels()
-  }, 1000)
-}
 
-function applyLabels() {
-  let _bars = [].slice.call(document.querySelectorAll('.inner-bar'));
-  _bars.map((bar, index) => {
-    div = document.createElement('div')
-    div.className = 'data-label'
-    div.appendChild(document.createTextNode(bar.dataset.label))
-    bar.appendChild(div)
-  })
-}
-
-function createHeader(list) {
-  let header = document.createElement('li');
-  createHeaderLabel(header, 'rank')
-  createHeaderLabel(header, 'username')
-  createHeaderLabel(header, 'power')
-  list.appendChild(header)
-}
-
-function createHeaderLabel(header, label) {
-  let headerLabel = document.createElement('div')
-  headerLabel.className = `header header-${label}`
-  headerLabel.appendChild(document.createTextNode(label.toUpperCase()))
-  header.appendChild(headerLabel)
-}
-
-function createLeaderElement(listItem, text, className) {
-  let rank = document.createElement('div')
-  rank.className = className
-  rank.appendChild(document.createTextNode(text))
-  listItem.appendChild(rank)
-}
-
-function createLeaderImage(listItem, leader) {
+function createLeaderBoardAvatar(leaderBoard, leader) {
+  let image = document.createElement('div')
+  image.className = 'leader-board-cell col-1 col-m-1'
   let userIcon = document.createElement('img')
   userIcon.src = leader.profile === "" ? "./images/favicon.png" : leader.profile
-  userIcon.className = 'userIcon'
-  listItem.appendChild(userIcon)
-}
-
-function createLeaderBar(listItem, leader){
-  let power = document.createElement('div')
-  let bar = document.createElement('div')
-  let innerBar = document.createElement('div')
-  power.className = 'power'
-  bar.className = 'bar'
-  innerBar.className = 'inner-bar'
-  innerBar.dataset.label = round(leader.stress, 1)
-  innerBar.style.width = "0%"
-  bar.appendChild(innerBar)
-  power.appendChild(bar)
-  listItem.appendChild(power)
-}
-
-function createListItem() {
-  let listItem = document.createElement('li');
-  listItem.className = 'leader';
-  return listItem;
+  userIcon.className = 'circle userIcon'
+  image.appendChild(userIcon)
+  leaderBoardRow.appendChild(image)
 }
