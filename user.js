@@ -30,8 +30,9 @@ function populateUser() {
 }
 
 function populatelist(data, id) {
-  data.forEach((user) => {
+  data.forEach((user, index) => {
     let row = document.createElement('tr')
+    row.className = 'highlightable'
     let username = document.createElement('td')
     username.appendChild(document.createTextNode(user.name))
     let rank = document.createElement('td')
