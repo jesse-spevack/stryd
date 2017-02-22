@@ -14,11 +14,11 @@ document.addEventListener('DOMContentLoaded', function() {
 function UserPanel(user) {
   this.user                 = user;
   this.profileImage         = user.profile || "./images/favicon.png";
-  this.avatar               = img(['circle', 'avatar'])
-  this.avatarContainer      = document.getElementById('user-avatar')
-  this.userProfileContainer = document.getElementById('user-profile')
-  this.username             = document.createElement('h1')
-  this.rank                 = document.createElement('h2')
+  this.avatar               = img(['circle', 'avatar']);
+  this.avatarContainer      = document.getElementById('user-avatar');
+  this.userProfileContainer = document.getElementById('user-profile');
+  this.username             = document.createElement('h1');
+  this.rank                 = document.createElement('h2');
 }
 
 UserPanel.prototype.appendImage = function() {
@@ -73,7 +73,7 @@ DataTable.prototype.populateRows = function() {
     tableRow.appendStress();
     tableRow.addStyles();
 
-    document.getElementById(this.id).appendChild(tableRow.row)
+    document.getElementById(this.id).appendChild(tableRow.row);
   })
 }
 
@@ -89,20 +89,20 @@ function Row(user) {
 }
 
 Row.prototype.appendUsername = function() {
-  this.appendTableData(this.username, this.user.name)
+  this.appendTableData(this.username, this.user.name);
 }
 
 Row.prototype.appendRank = function() {
-  this.appendTableData(this.rank, this.user.rank)
+  this.appendTableData(this.rank, this.user.rank);
 }
 
 Row.prototype.appendStress = function() {
-  this.appendTableData(this.stress, this.userStress)
+  this.appendTableData(this.stress, this.userStress);
 }
 
 Row.prototype.appendTableData = function(container, text) {
-  container.appendChild(document.createTextNode(text))
-  this.row.appendChild(container)
+  container.appendChild(document.createTextNode(text));
+  this.row.appendChild(container);
 }
 
 Row.prototype.addStyles = function() {

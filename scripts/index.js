@@ -1,18 +1,18 @@
 function round(value, precision) {
     var multiplier = Math.pow(10, precision || 0);
-    return Math.round(value * multiplier) / multiplier
+    return Math.round(value * multiplier) / multiplier;
 }
 
 function getPowerBarPercent(power) {
-  return round((power / (DATA.top[0].stress + 50) * 100), 0)
+  return round((power / (DATA.top[0].stress + 50) * 100), 0);
 }
 
 function div(classes) {
-  return el('div', classes)
+  return el('div', classes);
 }
 
 function img(classes) {
-  return el('img', classes)
+  return el('img', classes);
 }
 
 function el(tag, classes) {
@@ -50,7 +50,7 @@ function setGraphWidths() {
   bars.map((bar, index) => {
     setTimeout(() => { setInnerBarWidth(bar) }, 0);
   })
-  setTimeout(() => { applyLabels(bars) }, 1000)
+  setTimeout(() => { applyLabels(bars) }, 1000);
 }
 
 function setInnerBarWidth(bar) {
@@ -73,7 +73,7 @@ Label.prototype.append = function() {
 
 function applyLabels(bars) {
   bars.map(function(bar) {
-    let label = new Label(bar)
+    let label = new Label(bar);
     label.apply();
     label.append();
   })
