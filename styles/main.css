@@ -1,6 +1,6 @@
 body {
   font-family: 'TrimWebSemiBold', Arial, 'Helvetica Neue';
-  background-image: url("./images/banner.jpg");
+  background-image: url("../images/banner.jpg");
   color: #fff;
   margin: 0;
 }
@@ -42,8 +42,4 @@ body {
 
 .user-profile {
   margin: 1em;
-}
-
-.top-image {
-  background-image: url("./images/rock_reverse.png");
 }

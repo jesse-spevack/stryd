@@ -36,7 +36,7 @@
 
 .footer-img {
   height: 150px;
-  background-image: url("./images/bottom-seperator-transparent.png");
+  background-image: url("../images/bottom-seperator-transparent.png");
   background-size: cover;
 }
 
@@ -94,15 +94,5 @@ button:focus {
 }
 
 .btn-bar {
-  margin-top: 35px;
+  margin-top: 3rem;
 }
-
-
-.red { background-color: red }
-.yellow { background-color: yellow }
-.orange { background-color: orange }
-.green { background-color: green }
-.blue { background-color: blue }
-.purple { background-color: purple }
-.white { background-color: white }
-.black { background-color: blue }
