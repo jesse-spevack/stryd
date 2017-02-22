@@ -36,7 +36,7 @@ function populateUser() {
 }
 
 function populateTable(data, id) {
-  document.getElementById(id).innerHTML = `<tr><th>USERNAME</th><th>RANK</th><th>STRESS</th></tr>`
+  document.getElementById(id).innerHTML = `<tr><th>USERNAME</th><th class="center-text">RANK</th><th class="center-text">STRESS</th></tr>`
   data.forEach((user, index) => {
     let row = document.createElement('tr')
     let username = document.createElement('td')
@@ -47,8 +47,11 @@ function populateTable(data, id) {
 
     if(user.highlight){
       username.className = `darken ${user.highlight}`
-      rank.className = `darken ${user.highlight}`
-      stress.className = `darken ${user.highlight}`
+      rank.className = `center-text darken ${user.highlight}`
+      stress.className = `center-text darken ${user.highlight}`
+    } else {
+      rank.className = 'center-text'
+      stress.className = 'center-text'
     }
     stress.appendChild(document.createTextNode(round(user.stress,0)))
 
@@ -79,12 +82,6 @@ function getDifferentRandomIndex(length, randomIndex) {
   }
   return randomIndex2;
 }
-//
-// function resetUserData(index, user, decrease) {
-//   data[index].rank = user.rank
-//   data[index].stress = user.stress
-//   data[index].highlight = decrease ? 'decrease' : 'increase'
-// }
 
 function user(name, rank, stress, highlight) {
   this.name = name;

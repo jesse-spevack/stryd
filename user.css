@@ -64,3 +64,7 @@ p {
   line-height: 1.5em;
   margin-top: 25px;
 }
+
+.center-text {
+  text-align: center;
+}
