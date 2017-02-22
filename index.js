@@ -22,11 +22,9 @@ function createLeaderBoardPowerBar(leaderBoardRow, leader, className) {
 }
 
 function setGraphWidths() {
-  console.log('setting widths.')
   let _bars = [].slice.call(document.querySelectorAll('.inner-bar'));
   _bars.map((bar, index) => {
     setTimeout(() => {
-      console.log(bar.dataset.label)
       bar.style.width = getPowerBarPercent(bar.dataset.label) + "%";
     }, 0);
   })

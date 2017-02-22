@@ -46,3 +46,21 @@ th, td {
 .top-image {
   background-image: url("./images/bottom-seperator-transparent.png");
 }
+
+.increase {
+  color: #F7A016;
+}
+
+.decrease {
+  color: #C55400;
+}
+
+.darken {
+  background: #1C1C1C;
+}
+
+p {
+  font-size: 18px;
+  line-height: 1.5em;
+  margin-top: 25px;
+}
