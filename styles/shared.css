@@ -1,0 +1,98 @@
+.banner-title {
+  font-size: 2em;
+  font-weight: bold;
+  line-height: 2;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.highlightable:hover {
+  background: #1C1C1C
+}
+
+.bar {
+  background-color: #FAD3A5;
+  width: 100%;
+  height: 28px;
+  margin-top: 7px;
+}
+
+.inner-bar {
+  background-color: #CD881A;
+  height: 100%;
+  position: relative;
+  -webkit-transition: width 1000ms linear;
+  -moz-transition: width 1000ms linear;
+  transition: width 1000ms linear;
+  color: #fff;
+  line-height: 28px;
+  font-weight: bold;
+}
+
+.data-label {
+  margin-right: 10px;
+  float: right;
+}
+
+.footer-img {
+  height: 150px;
+  background-image: url("../images/bottom-seperator-transparent.png");
+  background-size: cover;
+}
+
+html, body {
+  height: 100%;
+}
+.page-wrap {
+  min-height: 100%;
+  margin-bottom: -150px;
+}
+.page-wrap:after {
+  content: "";
+  display: block;
+}
+.site-footer, .page-wrap:after {
+  height: 150px;
+}
+
+.circle {
+  border-radius: 50%;
+}
+
+button {
+  display: inline-block;
+  margin: 0 10px 0 0;
+  padding: 10px 25px;
+  font-size: 28px;
+  line-height: 1.8;
+  appearance: none;
+  box-shadow: none;
+  border-radius: 0;
+}
+
+button:focus {
+  outline: none
+}
+
+.flat button {
+  color: #fff;
+  background-color: #CD881A;
+  text-shadow: -1px 1px #4D4D4D;
+  border: none;
+}
+
+.flat button:hover,
+.flat button.hover {
+  background-color: #F5A214;
+  text-shadow: -1px 1px #27496d;
+}
+
+.flat button:active,
+.flat button.active {
+  background-color: #FAD3A5;
+  text-shadow: -1px 1px #193047;
+}
+
+.btn-bar {
+  margin-top: 3rem;
+}

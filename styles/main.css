@@ -1,0 +1,45 @@
+body {
+  font-family: 'TrimWebSemiBold', Arial, 'Helvetica Neue';
+  background-image: url("../images/banner.jpg");
+  color: #fff;
+  margin: 0;
+}
+
+.leader {
+  border: solid 1px #4D4D4D;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.leader {
+  background-color: #262626;
+  padding: .75em;
+}
+
+.leader-board-cell {
+  height: 42px;
+  line-height: 42px;
+}
+
+.header-label {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.rank {
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.userIcon {
+  width: 35px;
+  height: 35px;
+  margin-top: 5px;
+}
+
+.user-profile {
+  margin: 1em;
+}
